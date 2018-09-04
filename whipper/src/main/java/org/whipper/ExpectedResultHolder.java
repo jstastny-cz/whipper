@@ -7,7 +7,6 @@ import java.math.BigInteger;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
-import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 import org.whipper.xml.XmlHelper;
@@ -236,7 +235,7 @@ public class ExpectedResultHolder {
                         addError("Expected and actual column label are different. Expected:["
                                 + columnLabels.get(i) + "], actual: [" + labels.get(i) + "].");
                     }
-                    if(!columnTypeNames.get(i).equalsIgnoreCase(types.get(i))){
+                    if (!isMatchingColumnType(types.get(i), columnTypeNames.get(i))) {
                         addError("Expected and actual column type are different. Expected:["
                                 + columnTypeNames.get(i) + "], actual: [" + types.get(i) + "].");
                     }
@@ -254,6 +253,23 @@ public class ExpectedResultHolder {
                 }
             }
         }
+    }
+
+    /**
+     * Method that decides if the two types are matching or not.
+     * Criteria:
+     * 1. the types are equal
+     * 2. actualType is {@link XmlHelper#TYPE_STRING} and expected type is {@link XmlHelper#TYPE_REGEX}
+     *
+     * @param actualType
+     *            string with type name
+     * @param expectedType
+     *            string with type name
+     * @return true if any of the Criteria above matches.
+     */
+    private boolean isMatchingColumnType(String actualType, String expectedType) {
+        return expectedType.equalsIgnoreCase(actualType) || (actualType.equalsIgnoreCase(XmlHelper.TYPE_STRING)
+                && expectedType.equalsIgnoreCase(XmlHelper.TYPE_REGEX));
     }
 
     /**

@@ -99,7 +99,7 @@ public class ExpectedResultHolderTest{
         Assertions
             .assertAll(
                 () -> Assertions.assertTrue(exp.equals(
-                    getMockTable(Collections.singletonList("regex"), Collections.singletonList("regex"),
+                    getMockTable(Collections.singletonList("string"), Collections.singletonList("regex"),
                         Arrays.asList(Collections.singletonList(24.00000000), Collections.singletonList("TRUE"))),
                     false, BigDecimal.ZERO), "Table exp - table act - regex should match"),
                 () -> Assertions

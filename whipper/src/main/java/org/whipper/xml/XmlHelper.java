@@ -65,21 +65,22 @@ public class XmlHelper {
     /* XML 1.0 valid characters - #x9 | #xA | #xD | [#x20-#xD7FF] | [#xE000-#xFFFD] | [#x10000-#x10FFFF] */
     private static final Pattern INVALID_XML_1_0_TEXT = Pattern.compile(".*[^\u0009\r\n\u0020-\uD7FF\uE000-\uFFFD\ud800\udc00-\udbff\udfff].*");
     /* XML tags */
-    private static final String TYPE_INTEGER = "integer";
-    private static final String TYPE_FLOAT = "float";
-    private static final String TYPE_LONG = "long";
-    private static final String TYPE_DOUBLE = "double";
-    private static final String TYPE_BYTE = "byte";
-    private static final String TYPE_DATE = "date";
-    private static final String TYPE_TIME = "time";
-    private static final String TYPE_TIMESTAMP = "timestamp";
-    private static final String TYPE_BOOLEAN = "boolean";
-    private static final String TYPE_CHAR = "char";
-    private static final String TYPE_SHORT = "short";
-    private static final String TYPE_BIGINTEGER = "biginteger";
-    private static final String TYPE_BIGDECIMAL = "bigdecimal";
-    private static final String TYPE_UNPRINTABLE = "unprintable";
-    private static final String TYPE_REGEX = "regex";
+    public static final String TYPE_INTEGER = "integer";
+    public static final String TYPE_FLOAT = "float";
+    public static final String TYPE_LONG = "long";
+    public static final String TYPE_DOUBLE = "double";
+    public static final String TYPE_BYTE = "byte";
+    public static final String TYPE_DATE = "date";
+    public static final String TYPE_TIME = "time";
+    public static final String TYPE_TIMESTAMP = "timestamp";
+    public static final String TYPE_BOOLEAN = "boolean";
+    public static final String TYPE_CHAR = "char";
+    public static final String TYPE_SHORT = "short";
+    public static final String TYPE_BIGINTEGER = "biginteger";
+    public static final String TYPE_BIGDECIMAL = "bigdecimal";
+    public static final String TYPE_UNPRINTABLE = "unprintable";
+    public static final String TYPE_REGEX = "regex";
+    public static final String TYPE_STRING = "string";
     /* XML I/O */
     private static final Unmarshaller RESULT_UNMARSHALLER;
     private static final Unmarshaller SUITE_UNMARSHALLER;
